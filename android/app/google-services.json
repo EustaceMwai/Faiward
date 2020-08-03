@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "917293468641",
+    "firebase_url": "https://eagle-mentors.firebaseio.com",
+    "project_id": "eagle-mentors",
+    "storage_bucket": "eagle-mentors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917293468641:android:c053c262b5281c0aeee0a0",
+        "android_client_info": {
+          "package_name": "com.example.eagle_mentors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917293468641-h179hi4sfpobnsqrgu2abclv3qk5u5en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBHgAZ8yKfi3FPn_xuSZbRRDZaORpTAgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917293468641-h179hi4sfpobnsqrgu2abclv3qk5u5en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
