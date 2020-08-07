@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eagle_mentors/helper/helperfunctions.dart';
 import 'package:eagle_mentors/services/auth.dart';
+import 'package:eagle_mentors/services/database.dart';
 import 'package:eagle_mentors/widgets/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -15,15 +17,25 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final formKey = GlobalKey<FormState>();
   AuthMethods authMethods = new AuthMethods();
+  DatabaseMethods databaseMethods = new DatabaseMethods();
   TextEditingController emailTextEditingController =
       new TextEditingController();
   TextEditingController passwordTextEditingController =
       new TextEditingController();
   bool isLoading = false;
+  QuerySnapshot snapshotUserInfo;
   signIn() {
     if (formKey.currentState.validate()) {
       HelperFunctions.saveUserEmailSharedPreference(
           emailTextEditingController.text);
+      databaseMethods
+          .getUserByUserEmail(emailTextEditingController.text)
+          .then((val) {
+        snapshotUserInfo = val;
+        HelperFunctions.saveUserNameInSharedPreference(
+            snapshotUserInfo.documents[0].data["name"]);
+        print("${snapshotUserInfo.documents[0].data["name"]}");
+      });
       //TODO: a function to get user details
       setState(() {
         isLoading = true;
